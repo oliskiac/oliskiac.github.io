@@ -84,23 +84,18 @@ class particless{
 
 	constructor(){
 
-		//Casilla de la que sale, vel, dis, radio, fotograma de la animacion
-		this.x = int(random(-nLinAn, nLinAn));
-		this.y = int(random(0,nLinAl));
-		this.yFin = random(100,500);
+		//Casilla de la que sale, vel, dis, radio, fotograma de la animacio
 		this.vel = random(5,15);
 		this.ccc = 0;
-		this.rad = 10;
-		/*this.x = random(-width/4, 5*width/4);
+		this.x = random(-150, width+150);
 		this.y = -random(15,100);
 		this.pFx = int(random(0,width));
-		this.pFy =int(random(320, alto));
+		this.pFy = int(random(320, alto));
     this.qwe = random(70,195);
 		this.vely = (this.pFy-this.y)/this.qwe;
     this.velx = (this.pFx-this.x)/this.qwe;
 		this.rad = random(4,25);
 		this.vRad = (this.pFy*0.0008)-0.3;
-		this.ccc = 0;*/
 	}
 
     move(){
@@ -111,7 +106,7 @@ class particless{
         this.y = this.y+this.vely;
         this.rad = this.rad+this.vRad;
         ellipse(this.x,this.y, this.rad, this.rad);
-        //line(this.x,this.y,this.pFx, this.pFy);
+        line(this.x,this.y,this.pFx, this.pFy);
         if(this.ccc >= this.qwe){
         	this.x = random(-width/2, 3*width/2);
 			this.y = -random(15,100);
