@@ -7,11 +7,8 @@ let bot1, bot2, bot3;
 
 
 function setup() {
-	alto = 880;
-	if(alto < windowHeight){
-		alto = windowHeight;
-	}
-  var nosemasu = createCanvas(windowWidth-17, alto);
+	alto = windowHeight;
+  var nosemasu = createCanvas(windowWidth, alto);
   nosemasu.position(0,0);
   nosemasu.style('z-index',-1);
   nosemasu.parent('juego');
@@ -21,15 +18,6 @@ function setup() {
   for(i = 0; i < 15; i++){
       pCr.push(new particless());
   }
-
-  /*bot1 = createButton('YouTube');
-  bot1.position(width/2, 100);
-
-  bot2 = createButton('Github');
-  bot2.position(width/2, 200);
-
-  bot3 = createButton('OpenProcessing');
-  bot3.position(width/2, 300);*/
 }
 
 
@@ -53,27 +41,25 @@ function draw() {
   }
   if(act ==  false){
     col1 = '#183A37';col = '#04151F';Col1 = '#EFD6AC'; Col = '#DE9151';
-    fill(col1);
-    rect((width/2)-250, 5, 500, 135);
   }
 
   contadorAl = alto;
   for ( i = 0; i < nLinAl; i++) {
   	stroke(Col);
-  	contadorAl = contadorAl - (alto/13) + (4*i);
+  	contadorAl = contadorAl - (alto/12) + (3.5*i);
   	//line(0, contadorAl, windowWidth/2, i*10);
-  	line(0, contadorAl, windowWidth, contadorAl);
+  	line(0, contadorAl, width, contadorAl);
   }
 
   for ( i = 0; i < nLinAn; i++) {
   	stroke(Col);
   	//tempor = (i+1)*230;
   	tempor = (i+1)*(1.5*width/nLinAn);
-  	line((width/2)+tempor, height,(windowWidth/2)+(contadorAl*(tempor)/windowHeight), contadorAl);//dejar el contadorAl porque tiene el resultado acumulado
-  	line((windowWidth/2)-tempor, height,(windowWidth/2)-(contadorAl*(tempor)/windowHeight), contadorAl);
+  	line((width/2)+tempor, height,(width/2)+(contadorAl*(tempor)/height), contadorAl);//dejar el contadorAl porque tiene el resultado acumulado
+  	line((width/2)-tempor, height,(width/2)-(contadorAl*(tempor)/height), contadorAl);
   }
 
-  line(windowWidth/2, windowHeight, windowWidth/2, contadorAl);
+  line(width/2, height, width/2, contadorAl);
 
   for (i = 0; i < 9; i++) {
   		strokeWeight(2);
