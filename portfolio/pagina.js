@@ -47,13 +47,11 @@ function draw() {
   for ( i = 0; i < nLinAl; i++) {
   	stroke(Col);
   	contadorAl = contadorAl - (alto/12) + (3.5*i);
-  	//line(0, contadorAl, windowWidth/2, i*10);
   	line(0, contadorAl, width, contadorAl);
   }
 
   for ( i = 0; i < nLinAn; i++) {
   	stroke(Col);
-  	//tempor = (i+1)*230;
   	tempor = (i+1)*(1.5*width/nLinAn);
   	line((width/2)+tempor, height,(width/2)+(contadorAl*(tempor)/height), contadorAl);//dejar el contadorAl porque tiene el resultado acumulado
   	line((width/2)-tempor, height,(width/2)-(contadorAl*(tempor)/height), contadorAl);
